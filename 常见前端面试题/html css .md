@@ -39,7 +39,8 @@
 **static** 默认值。没有定位，元素出现在正常的流中     
 **sticky** 生成粘性定位的元素，容器的位置根据正常文档流计算得出    
 
-[CSS实现垂直居中的5种方法](https://www.qianduan.net/css-to-achieve-the-vertical-center-of-the-five-kinds-of-methods/)               
+[CSS实现垂直居中的5种方法](https://www.qianduan.net/css-to-achieve-the-vertical-center-of-the-five-kinds-of-methods/)      
+
 [常用的清除浮动方法](https://www.cnblogs.com/nxl0908/p/7245460.html)    
 
 
