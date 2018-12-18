@@ -44,6 +44,31 @@ fn1中定义的obj为局部变量，而当调用结束后，出了fn1的环境�
 　到目前为止，IE、Firefox、Opera、Chrome、Safari的js实现使用的都是标记清除的垃圾回收策略或类似的策略，只不过垃圾收集的时间间隔互不相同。  
 **引用计数**：  
 　定义和用法：引用计数是跟踪记录每个值被引用的次数。  
-  基本原理：就是变量的引用次数，被引用一次则加1，当这个引用计数为0时，被视为准备回收的对象。  
+  基本原理：就是变量的引用次数，被引用一次则加1，当这个引用计数为0时，被视为准备回收的对象。   
+
+##document.write和innerHTML的区别：   
+document.write是直接写入到页面的内容流，如果在写之前没有调用document.open,浏览器会自动调用open。每次写完关闭之后重新调用该函数，会导致页面被重写。    
+innerHTML则是DOM页面元素的一个属性，代表该元素的html内容。你可以精确到某一个具体的元素来进行更改。如果想修改document的内容，则需要修改document.documentElement.innerElement。innerHTML将内容写入某个DOM节点，不会导致页面全部重绘。      
+innerHTML很多情况下都优于document.write，其原因在于其允许更精确的控制要刷新页面的那一个部分。   
+
+##undefined 和 null 区别   
+**null：** Null类型，代表“空值”，代表一个空对象指针，使用typeof运算得到“object”，所以你可以认为它是一个特殊的对象值。    
+**undefined：** Undefined类型，当一个声明了一个变量未初始化时，得到的就是undefined。
+null是javascript的关键字，可以认为是对象类型，它是一个空对象指针，和其它语言一样都是代表“空值”，不过 undefined 却是javascript才有的。undefined是在ECMAScript第三版引入的，为了区分空指针对象和未初始化的变量，它是一个预定义的全局变量。没有返回值的函数返回为undefined，没有实参的形参也是undefined。     
+javaScript权威指南： null 和 undefined 都表示“值的空缺”，你可以认为undefined是表示系统级的、出乎意料的或类似错误的值的空缺，而null是表示程序级的、正常的或在意料之中的值的空缺。    
+
+##JS哪些操作会造成内存泄露       
+1）意外的全局变量引起的内存泄露      
+```
+function leak(){  
+  leak="xxx";         //leak成为一个全局变量，不会被回收  
+}
+```
+2）闭包引起的内存泄露         
+3）没有清理的DOM元素引用        
+4）被遗忘的定时器或者回调         
+5）子元素存在引起的内存泄露            
+
+
 
 
