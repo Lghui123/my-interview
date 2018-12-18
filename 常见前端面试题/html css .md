@@ -32,7 +32,14 @@
 相同点：px和em都是长度单位；          
 异同点：px的值是固定的，指定是多少就是多少，计算比较容易。em得值不是固定的，并且em会继承父级元素的字体大小。浏览器的默认字体高都是16px。所以未经调整的浏览器都符合:1em=16px。那么12px=0.75em, 10px=0.625em。  
 
-[CSS实现垂直居中的5种方法](https://www.qianduan.net/css-to-achieve-the-vertical-center-of-the-five-kinds-of-methods/)               
+##position的值， relative和absolute分别是相对于谁进行定位的          
+**absolute** :生成绝对定位的元素，相对于最近一级的定位，不是static的父元素来进行定位。    
+**fixed** （老IE不支持）生成绝对定位的元素，通常相对于浏览器窗口或 frame 进行定位。    
+**relative** 生成相对定位的元素，相对于其在普通流中的位置进行定位。    
+**static** 默认值。没有定位，元素出现在正常的流中     
+**sticky** 生成粘性定位的元素，容器的位置根据正常文档流计算得出    
 
+[CSS实现垂直居中的5种方法](https://www.qianduan.net/css-to-achieve-the-vertical-center-of-the-five-kinds-of-methods/)               
+[常用的清除浮动方法](https://www.cnblogs.com/nxl0908/p/7245460.html)    
 
 
